@@ -1,49 +1,47 @@
-#include <iostream>
+#include <iostream> 
+#include <time.h>
 using namespace std;
-int main()
+void main()
 {
-	int i, j, n, m, a[3][3];
-	cin >> n;
-	cin >> m;
-	for (i = 0; i, n; i++) {
-		for (j = 0; j < m; j++) {
-			cin >> a[i][j];
-		}
+	double time_spent = 0.0;
+	clock_t begin = clock();
+	setlocale(LC_ALL, "rus");
+	int rows = 0;
+	cout << "vvedite n=" << endl;
+	cin >> rows;
+	int cols = 0;
+	cout << "vvedite n=" << endl;
+	cin >> cols;
+
+	int **arr = new int* [rows];
+	for (int i = 0; i < rows; i++)
+	{
+		
+	   arr[i] = new int[cols];
 
 	}
-	for (i = 0; i, n; i++) {
-		for (j = 0; j < m; j++) {
-			cout << a[i][j]<<"\t";
-
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			arr[i][j] = rand() %20;
 		}
-		cout << endl;
+		
 	}
-	
+	int sum(0);
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			if (i < j)
 
-
-}
-
-#include <iostream>
-using namespace std;
-int main()
-{
-	int i, j, n, m, a[3][3];
-	cin >> n;
-	cin >> m;
-	for (i = 0; i, n; i++) {
-		for (j = 0; j < m; j++) {
-			cin >> a[i][j];
-		}
+				sum+=arr[i][j];
+		} 
 
 	}
-	for (i = 0; i, n; i++) {
-		for (j = 0; j < m; j++) {
-			cout << a[i][j] << "\t";
-
-		}
-		cout << endl;
-	}
-
-
-
+	clock_t end = clock();
+	time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+	printf("Vremya vipolnenia %f seconds ==  ", time_spent);
+	delete[] arr;
+	cout << sum ;
 }
