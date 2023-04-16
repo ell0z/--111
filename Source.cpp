@@ -3,7 +3,11 @@
 using namespace std;
 void main()
 {
+<<<<<<< HEAD
 	double time_spent = 0.1;
+=======
+	double time_spent = 0.0;
+>>>>>>> main
 	clock_t begin = clock();
 	setlocale(LC_ALL, "rus");
 	int rows = 0;
